@@ -3,6 +3,7 @@ package com.company;
 public class SkyView {
     private double[][] view;
 
+    //Sorts a 1d array into a 2d array designated by # of rows and columns
     public SkyView(int numRows, int numCols, double[] scanned)
     {
         view = new double[numRows][numCols];
@@ -28,19 +29,45 @@ public class SkyView {
                         }
                     }
                 }
+
+                //prints out the SkyView array
             for (int i = 0; i<view.length; i++)
             {
                 for (int j = 0; j < view[0].length; j++)
                 {
                     System.out.print(view[i][j]+" ");
                 }
-                System.out.println("");
+                System.out.println();
             }
 
         }
+        //If the 2d array's size isn't big enough to fit all data from the 1d array
         else
         {
             System.out.println("Please increase 2D array rows or columns to increase array size!");
         }
     }
+
+    //gets the average of a window of the 2d array
+    public double getAverage(int startRow, int endRow, int startCol, int endCol)
+    {
+        double average = 0;
+        int count = 0;
+
+        //indexes through the designated rows
+        for(int i = startRow; i < endRow; i++)
+        {
+            //indexes through the designated columns
+            //adding each index value to the average and incrementing counter
+            for(int j = startCol; j < endCol; j++)
+            {
+             average += view[i][j];
+             count++;
+            }
+        }
+        average = average/count;
+        return average;
+    }
+
+
 }
