@@ -30,22 +30,26 @@ public class SkyView {
                     }
                 }
 
-                //prints out the SkyView array
-            for (int i = 0; i<view.length; i++)
-            {
-                for (int j = 0; j < view[0].length; j++)
-                {
-                    System.out.print(view[i][j]+" ");
-                }
-                System.out.println();
-            }
-
         }
         //If the 2d array's size isn't big enough to fit all data from the 1d array
         else
         {
             System.out.println("Please increase 2D array rows or columns to increase array size!");
         }
+    }
+
+    public double[][] printView()
+    {
+        //prints out the SkyView array
+        for (int i = 0; i<view.length; i++)
+        {
+            for (int j = 0; j < view[0].length; j++)
+            {
+                System.out.print(view[i][j]+" ");
+            }
+            System.out.println();
+        }
+        return view;
     }
 
     //gets the average of a window of the 2d array
