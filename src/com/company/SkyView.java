@@ -38,9 +38,10 @@ public class SkyView {
         }
     }
 
-    public double[][] printView()
+    //prints out the SkyView array
+    public String printView()
     {
-        //prints out the SkyView array
+        String space = " ";
         for (int i = 0; i<view.length; i++)
         {
             for (int j = 0; j < view[0].length; j++)
@@ -49,7 +50,7 @@ public class SkyView {
             }
             System.out.println();
         }
-        return view;
+        return space;
     }
 
     //gets the average of a window of the 2d array
